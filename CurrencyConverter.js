@@ -16,7 +16,8 @@ const CurrencyConverter = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}/api/rates?base=${fromCurrency}&target=${toCurrency}`
+ `${process.env.REACT_APP_BACKEND_URL}/api/rates?base=${fromCurrency}&target=${toCurrency}`
+
         );
         setRate(response.data.rate);
         setConvertedAmount((amount * response.data.rate).toFixed(2));
